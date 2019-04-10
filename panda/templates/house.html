@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+ 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+
+  
+
+</head>
+<body>
+  <div class="main_body">
+  <!--Nav bar-->
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #007904;">
+   <a class="navbar-brand" style="color:white" href="http://localhost:5000/">Eric's Housing Agency</a>
+ 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+      
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+   
+      <li class="nav-item">
+         <a class="nav-link" style="color:white" href="http://localhost:5000/house" >Store</a>
+      </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/registor_page">Registration</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/profile">My account</a>
+    </li>
+
+      </UL>
+   </div> 
+   </nav>
+
+  <!-- content -->
+  <div class="row ">
+    <div class="col-12" >
+      
+    </div>
+  </div>
+  
+  
+  
+  <br>
+
+  <div class="row ">
+
+    <div class="col-12" >
+      <h2 id="heading_pd" style="color: red">{{error}}</h2>
+      <h2 id="heading_pd">{{Drink_filter}}</h2>
+      
+      <div id="list_of_product">
+      {% for item in house_list %}
+      
+      <div class="product"  style="padding: 5px;">
+        <div class="row">
+          <div class="col-sm-4 col-xl-2  ">
+            <img src="/static/img/{{item[0]}}.jpg" class="house_photo" style=" height: 100% ;width:100%; max-width: 200px; max-height: 200px">
+          </div>
+          <div class="col-sm-8 col-xl-10  ">
+        
+    
+            
+              <tr>
+                <td><h5>Product ID: </h5></td>
+                
+                <td><h5><input type="text" min="10-4-2019" id="id" name="id" value = "{{item[0]}}" disabled="disabled" ></h5></td>
+                <td><h6>Bedroom: {{item[2]}}</h6></td>
+                <td><h6>Common Space: {{item[3]}}</h6></td>
+                <td><h6>Bathroom: {{item[4]}}</h6></td>
+                <td><h5 style="font-weight: bold;color:#0039e6">This house is {{item[1]}} avaliable for renting</h5></td>
+                <form action = "http://localhost:5000/profile" method = "POST">
+                  <div class="form-group ">    
+
+                  <label for="book">Choose a date for visiting:</label>     
+                  <label for="book" style="font-size: 12px">(yyyy/mm/dd)</label> 
+                  <p id="invalid_birth" style="color:red"></p>
+                  <input type="date" id="book" name="book" >
+      
+                  </div>                  
+                <button class="btn btn-primary">book a time for visit</button>&nbsp;
+                <label for="book" style = "color : red">{{error}}</label>
+                
+                  <input type="text" value="{{item[0]}}" name="product_id" class="product_id_text">
+                </form>
+              </tr>
+              <br>
+            
+          </div>
+        </div>
+      </div>
+      <br>
+        {% endfor %}
+     
+    </div>
+  </div>
+    
+  </div>
+
+
+  
+  
+
+</div> 
+
+<!-- Footer -->
+</div>
+
+
+<script type="text/javascript">
+  
+ 
+
+  $(".product_id_text").hide();
+
+
+
+  function gototop() {
+    $("html, body").animate({ scrollTop: 0 }, 300);
+  
+}
+  
+  
+</script>
+
+</body>
+
+
+</html>

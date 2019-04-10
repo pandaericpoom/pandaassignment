@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<!--Nav bar-->
+	<nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #007904;">
+	<a class="navbar-brand" style="color:white" href="http://localhost:5000/">Eric's Housing Agency</a>
+ 
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+  		
+  	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  		<ul class="navbar-nav">
+	
+		<li class="nav-item">
+			<a class="nav-link" style="color:white" href="http://localhost:5000/house" >Store</a>
+		</li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/registor_page">Registration</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/profile">My account</a>
+    </li>
+
+		</UL>
+	</div>  
+	</nav>
+
+	<!--carosel-->
+	
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+      
+
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner" style="background-color: black; box-shadow: 1px 1px 5px #FFFFFF;">
+    <div class="row">
+      <div class="col-lg-2 col-md-1"></div>
+      <div class="col-lg-8 col-md-10">
+  	   <div class="carousel-item active ">
+        <a href="http://localhost:5000/"><img src="/static/img/logo.png" class="main_carousel"  alt="logo"  ></a>
+      </div>
+      <div class="carousel-item ">
+        <a href="http://localhost:5000/house"><img src="/static/img/A01.jpg" class="main_carousel" alt="A01" ></a>
+      
+      </div>
+      <div class="carousel-item">
+        <a href="http://localhost:5000/house"><img src="/static/img/A02.jpg" class="main_carousel"  alt="A02" ></a>
+      </div>
+    
+      </div>
+      </div>
+    </div>
+    
+    
+  </div>
+
+</div>
+
+ 
+
+<!-- Footer -->
+<div class="main_body">
+<footer class="page-footer font-small container-fluid" style="background-color:#FFFFFF; color:#4d4d4d" >
+  
+  <article class="footer_column">
+      <h3>ABOUT US</h3>
+     <img src="/static/img/logo.png" alt="" width="400" height="400" class="cards"/>
+      <p>We are a house rending company that founded in 10th of April in 2019.</p>
+      <p>You can do registration for booking the rending house visiting.</p>
+      <p><a href="http://localhost:5000/registor_page" method = "POST" > < Create a new account </a></p>
+      <p>{{test}}</p>
+    </article>
+  
+  
+
+</footer>
+</div>
+<footer class="page-footer font-small " style="background-color:#007904; color:white; font-size:12px">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright: EricPoon
+  </div>
+  
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

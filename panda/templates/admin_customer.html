@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+ 
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+
+  
+
+</head>
+<body>
+ <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #007904;">
+   <a class="navbar-brand" style="color:white" href="http://localhost:5000/">Go to main page</a>
+ 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+      
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+   
+      <li class="nav-item">
+         <a class="nav-link" style="color:white" href="http://localhost:5000/sfcustomer_page" >Customer detail</a>
+      </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/sfhouse1">House detail</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/sfhouse">New House</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/">Logout</a>
+    </li>
+
+      </UL>
+   </div> 
+   </nav>
+   <table border = 1>
+          <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Gender</td>
+            <td>Phone no</td>
+            <td>Email</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Comming Date</td>
+            <td>Upcomming Booking</td>  
+
+          </tr>
+         {% for item in result %}
+            <tr>
+              
+               <td> {{ item[0] }} </td>
+               <td> {{ item[1] }} </td>
+               <td> {{ item[2] }} </td>
+               <td> {{ item[3] }} </td>
+               <td> {{ item[4] }} </td>
+               <td> {{ item[5] }} </td>
+               <td> {{ item[6] }} </td>
+               <td> {{ item[7] }} </td>
+               <td> {{ item[8] }} </td>
+
+            </tr>
+         {% endfor %}
+      </table>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+ 
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+
+  
+
+</head>
+<body>
+ <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #007904;">
+   <a class="navbar-brand" style="color:white" href="http://localhost:5000/">Go to main page</a>
+ 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+      
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+   
+      <li class="nav-item">
+         <a class="nav-link" style="color:white" href="http://localhost:5000/sfcustomer_page" >Customer detail</a>
+      </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/sfhouse1">House detail</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="color:white" href="http://localhost:5000/">Logout</a>
+    </li>
+
+      </UL>
+   </div> 
+   </nav>
+   <table border = 1>
+          <tr>
+              
+               <td> House ID </td>
+               <td> Avaliable or not</td>
+               <td> Number of bedroom</td>
+               <td> Number of common space</td>
+               <td> Number of washroom</td>
+               <td> booking no</td>
+
+          </tr>
+         {% for item in result %}
+            <tr>
+              
+               <td> {{ item[0] }} </td>
+               <td> {{ item[1] }} </td>
+               <td> {{ item[2] }} </td>
+               <td> {{ item[3] }} </td>
+               <td> {{ item[4] }} </td>
+               <td> {{ item[5] }} </td>
+
+            </tr>
+         {% endfor %}
+      </table>
+
+    <form action = "http://localhost:5000/sfhouse_page" method = "post"> 
+    <h2>New House</h2>
+    House ID:<input type = "text" name = "houseid" /><p><br>
+    Avaliable or not:<select name="Avaliable" id="Avaliable" name="Avaliable" >
+        <option value="now">Yes</option>
+        <option value="not">No</option>
+  
+      </select><br>
+    Number of bedroom:<input type = "number" name = "brno" min = 0 max = 999/><br>
+    Number of common space:<input type = "number" name = "csnb" min = 0 max = 999/><br>
+    Number of washroom:<input type = "number" name = "wrno" min = 0 max = 999/><br>
+    booking no.:<input type = "number" name = "bkno" min = 0 max = 999 value = 0/><br>
+<p><input type = "submit" value = "submit" /></p>
+</form>
+
+
+
+</body>
+
+
+</html>
